@@ -1,0 +1,25 @@
+@import-normalize; /* bring in normalize.css styles */
+
+body {
+  margin: 0;
+  font-family: -apple-system, 'Orbitron', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-image: url('./images/img2.akspic.ru-krasivyj_pejzazh-krasavica-art-youtub-voda-2250x4000.jpg');
+  background-size: cover;
+  color: #fff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul {
+  padding-left: 20px;
+}
+li {
+  padding-left: 0px;
+  list-style: none;
+}
