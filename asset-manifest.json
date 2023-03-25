@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.593685cc.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.1821191f.js",
+    "static/media/img2.akspic.ru-krasivyj_pejzazh-krasavica-art-youtub-voda-2250x4000.jpg": "/goit-react-hw-08-phonebook/static/media/img2.akspic.ru-krasivyj_pejzazh-krasavica-art-youtub-voda-2250x4000.ef3ac37836c2b88a52da.jpg",
+    "index.html": "/goit-react-hw-08-phonebook/index.html",
+    "main.593685cc.css.map": "/goit-react-hw-08-phonebook/static/css/main.593685cc.css.map",
+    "main.1821191f.js.map": "/goit-react-hw-08-phonebook/static/js/main.1821191f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.593685cc.css",
+    "static/js/main.1821191f.js"
+  ]
+}
