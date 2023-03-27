@@ -1,11 +1,11 @@
 import ContactSVG from 'assest/contactSVG';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchContacts } from 'redux/operations';
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
 import { Button, Wrap, Contact } from './ContactsList.styled';
 
 export const Contacts = () => {
-  const { contacts, filter } = useSelector(state => state);
+  const { contacts, filter } = useSelector(state => state.contactsStore);
   const dispatch = useDispatch();
   const getVisibleContacts = () => {
     const normilizedFilter = filter.toLowerCase().trim();

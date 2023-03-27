@@ -2,15 +2,15 @@ import React from 'react';
 import { Button, FormWrap, InputForm } from './Form.styled';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 
 export const Form = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(state => state.contacts.isLoading);
-  const contacts = useSelector(state => state.contacts);
+  const { isLoading } = useSelector(state => state.contactsStore.contacts);
+  const { contacts } = useSelector(state => state.contactsStore);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  // const { isLoading } = contacts;
+
   const handleSubmit = event => {
     event.preventDefault();
     const contact = {

@@ -1,7 +1,7 @@
 import SearchSVG from 'assest/searchSVG';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { filterContact } from '../../redux/contactSlice';
+import { filterContact } from '../../redux/contacts/contactSlice';
 import { FilterWrap, Input, Wrap, WrapSVG } from './FilterContacts.styled';
 
 export const FilterContacts = () => {
