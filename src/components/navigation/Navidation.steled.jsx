@@ -8,7 +8,7 @@ export const Header = styled.header`
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 18px 0px #adff2f;
+  box-shadow: 0px 0px 18px 0px #00ffc0;
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -19,6 +19,6 @@ export const StyledLink = styled(NavLink)`
   padding: 15px;
   text-decoration: none;
   &.active {
-    color: #adff2f;
+    color: #00ffc0;
   }
 `;

@@ -16,9 +16,7 @@ export default function Login() {
         email,
         password,
       })
-    );
-
-    navigate('/contacts');
+    ).then(() => navigate('/contacts'));
   };
   return (
     <div>

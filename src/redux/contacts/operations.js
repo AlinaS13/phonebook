@@ -1,13 +1,24 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://641c8c0db556e431a8716f8d.mockapi.io';
-
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `${token}`;
+};
+const clearAuthHeader = () => {
+  axios.defaults.headers.common.Authorization = '';
+};
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/contacts');
+      const response = await axios
+        .get('/contacts')
+        .then(data => {
+          return data;
+        })
+        .catch(error => console.log(error));
+
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -21,29 +32,21 @@ export const addContact = createAsyncThunk(
     try {
       const response = await axios.post('/contacts', {
         name: customer.name,
-        phone: customer.phone,
+        number: customer.phone,
       });
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
-  {
-    condition: (_, { getState }) => {
-      const isLoading = getState().contacts.isLoading;
-      if (isLoading) {
-        return false;
-      }
-    },
   }
 );
 
 export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
-  async (contactId, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
-      await axios.delete(`/contacts/${contactId}`);
-      return contactId;
+      await axios.delete(`/contacts/${id}`);
+      return id;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

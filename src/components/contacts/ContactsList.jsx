@@ -1,7 +1,8 @@
 import ContactSVG from 'assest/contactSVG';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchContacts } from 'redux/contacts/operations';
+import { refreshOperation } from 'redux/auth/operations';
+import { deleteContact, fetchContacts } from '../../redux/contacts/operations';
 import { Button, Wrap, Contact } from './ContactsList.styled';
 
 export const Contacts = () => {
@@ -17,7 +18,7 @@ export const Contacts = () => {
   const filterName = getVisibleContacts();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshOperation()).then(() => dispatch(fetchContacts()));
   }, [dispatch]);
   return (
     <ul>
@@ -26,7 +27,7 @@ export const Contacts = () => {
           <Wrap>
             <ContactSVG></ContactSVG>
             <Contact>
-              {contact.name}: {contact.phone}
+              {contact.name}: {contact.number}
             </Contact>
             <Button
               type="button"

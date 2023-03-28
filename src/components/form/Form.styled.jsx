@@ -12,9 +12,9 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   margin-left: 3px;
-  width: 150px;
+  width: 100%;
   height: 40px;
-  color: #fff;
+  color: #00ffc0;
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;

@@ -42,18 +42,18 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
     },
     [logoutOperation.rejected](state, action) {},
-  },
 
-  [refreshOperation.pending](state, action) {
-    state.isRefreshing = true;
-  },
-  [refreshOperation.fulfilled](state, action) {
-    state.user = action.payload;
-    state.isLoggedIn = true;
-    state.isRefreshing = false;
-  },
-  [refreshOperation.rejected](state, action) {
-    state.isRefreshing = false;
+    [refreshOperation.pending](state, action) {
+      state.isRefreshing = true;
+    },
+    [refreshOperation.fulfilled](state, action) {
+      state.user = action.payload;
+      state.isLoggedIn = true;
+      state.isRefreshing = false;
+    },
+    [refreshOperation.rejected](state, action) {
+      state.isRefreshing = false;
+    },
   },
 });
 

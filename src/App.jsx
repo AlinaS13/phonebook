@@ -8,29 +8,20 @@ import NotFound from 'pages/not-found/notFound';
 import Home from 'pages/home/Home';
 import { PrivateRoute } from './hoc/PrivatRoute';
 import { PublicRoute } from 'hoc/PublickRout';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectIsRefreshing } from 'redux/auth/selector';
-import { refreshOperation } from 'redux/auth/operations';
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const isRefresh = useSelector(selectIsRefreshing);
-
-  useEffect(() => {
-    dispatch(refreshOperation());
-  }, [dispatch]);
-
-  // return
-  // !isRefresh ? (
-  //   <div>
-  //     <h2> Loading...</h2>
-  //   </div>
-  // ) :
   return (
     <div>
       <Routes>
         <Route path="/" element={<Wrapper />}>
-          <Route path="/home" element={<Home />} />
+          <Route
+            path="/home"
+            element={
+              <PublicRoute>
+                <Home />
+              </PublicRoute>
+            }
+          />
           <Route
             path="/login"
             element={
