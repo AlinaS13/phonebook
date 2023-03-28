@@ -18,7 +18,9 @@ export const Contacts = () => {
   const filterName = getVisibleContacts();
 
   useEffect(() => {
+    // dispatch(fetchContacts());
     dispatch(refreshOperation()).then(() => dispatch(fetchContacts()));
+    // eslint-disable-next-line
   }, [dispatch]);
   return (
     <ul>

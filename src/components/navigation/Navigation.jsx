@@ -9,7 +9,7 @@ export default function Navigaion() {
 
   return (
     <Header>
-      <StyledLink to="/home">Home</StyledLink>
+      <StyledLink to="/">Home</StyledLink>
       {authToken ? (
         <>
           <StyledLink to="/contacts">Contacts</StyledLink>

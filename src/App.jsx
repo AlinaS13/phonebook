@@ -15,12 +15,9 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Wrapper />}>
           <Route
-            path="/home"
-            element={
-              <PublicRoute>
-                <Home />
-              </PublicRoute>
-            }
+            // path="/home"
+            index
+            element={<Home />}
           />
           <Route
             path="/login"

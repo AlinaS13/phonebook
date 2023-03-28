@@ -7,7 +7,7 @@ export const PublicRoute = ({ children }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   // const location = useLocation();
   if (isLoggedIn) {
-    return <Navigate to="/" />;
+    return <Navigate to="/contacts" />;
   }
   return children;
 };
