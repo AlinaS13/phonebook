@@ -2,6 +2,14 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginOperation } from '../../redux/auth/operations';
+import {
+  Title,
+  Wraper,
+  Form,
+  ButtonLogin,
+  Label,
+  InputLogin,
+} from './Login.styled';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -19,29 +27,29 @@ export default function Login() {
     ).then(() => navigate('/contacts'));
   };
   return (
-    <div>
-      <h2>Login in </h2>
-      <form>
-        <label htmlFor="email">Login</label>
-        <input
+    <Wraper>
+      <Title>Login</Title>
+      <Form>
+        <Label htmlFor="email">Email</Label>
+        <InputLogin
           type="text"
           name="email"
           defaultValue={email}
           onChange={e => setEmail(e.target.value)}
           required
         />
-        <label htmlFor="password">Password</label>
-        <input
+        <Label htmlFor="password">Password</Label>
+        <InputLogin
           type="password"
           name="password"
           defaultValue={password}
           onChange={e => setPassword(e.target.value)}
           required
         />
-        <button type="button" onClick={e => handleSubmit(e)}>
+        <ButtonLogin type="button" onClick={e => handleSubmit(e)}>
           Login in
-        </button>
-      </form>
-    </div>
+        </ButtonLogin>
+      </Form>
+    </Wraper>
   );
 }

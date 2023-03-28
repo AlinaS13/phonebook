@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Wrapper from 'components/Wrapper';
 import { PhoneBook } from 'pages/contacts/PhoneBook';
-import Login from 'pages/login/login';
-import Registration from 'pages/registration/registration';
+import Login from 'pages/login/Login';
+import Registration from 'pages/registration/Registration';
 import NotFound from 'pages/not-found/notFound';
 import Home from 'pages/home/Home';
 import { PrivateRoute } from './hoc/PrivatRoute';

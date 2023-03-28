@@ -1,13 +1,11 @@
 import UserMenu from 'components/user-menu/UsrMenu';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { logoutOperation } from '../../redux/auth/operations';
-import { selectAuthToken, selectUser } from '../../redux/auth/selector';
-import { Header, LogOutBtn, StyledLink } from './Navidation.steled';
+import { useSelector } from 'react-redux';
+import { selectAuthToken } from '../../redux/auth/selector';
+import { Header, StyledLink, WrapUserUI } from './Navidation.steled';
 
 export default function Navigaion() {
   const authToken = useSelector(selectAuthToken);
-  // const dispatch = useDispatch();
 
   return (
     <Header>
@@ -18,10 +16,10 @@ export default function Navigaion() {
           <UserMenu />
         </>
       ) : (
-        <>
+        <WrapUserUI>
           <StyledLink to="/registration">Sign up</StyledLink>
           <StyledLink to="/login">Sign in</StyledLink>
-        </>
+        </WrapUserUI>
       )}
     </Header>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, FormWrap, InputForm } from './Form.styled';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact, castomOperation } from '../../redux/contacts/operations';
+import { addContact } from '../../redux/contacts/operations';
 
 export const Form = () => {
   const dispatch = useDispatch();

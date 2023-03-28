@@ -2,6 +2,14 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { registrationOperation } from '../../redux/auth/operations';
+import {
+  Title,
+  Wraper,
+  Form,
+  Label,
+  InputRegis,
+  ButtonRegis,
+} from './Registtation.styled';
 
 export default function Registration() {
   const [name, setName] = useState('');
@@ -18,42 +26,48 @@ export default function Registration() {
         email,
         password,
       })
-    );
+    ).then(response => {
+      if (response.error) {
+        navigate('/registration');
+      } else {
+        navigate('/contacts');
+      }
 
-    navigate('/');
+      console.log(response, 'err');
+    });
   };
   return (
-    <div>
-      <h2>Registration</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
+    <Wraper>
+      <Title>Registration</Title>
+      <Form onSubmit={handleSubmit}>
+        <Label htmlFor="name">Name</Label>
+        <InputRegis
           type="text"
           name="name"
           id="name"
           onChange={e => setName(e.target.value)}
           required
         />
-        <label htmlFor="login">Email</label>
-        <input
+        <Label htmlFor="login">Email</Label>
+        <InputRegis
           type="text"
           name="email"
           id="email"
           onChange={e => setEmail(e.target.value)}
           required
         />
-        <label htmlFor="password" className="label">
+        <Label htmlFor="password" className="label">
           Password
-        </label>
-        <input
+        </Label>
+        <InputRegis
           type="password"
           name="password"
           id="password"
           onChange={e => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Send</button>
-      </form>
-    </div>
+        <ButtonRegis type="submit">Send</ButtonRegis>
+      </Form>
+    </Wraper>
   );
 }

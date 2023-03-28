@@ -20,3 +20,9 @@ export const LogOutBtn = styled.button`
     /* border: 3px solid #fd5103; */
   }
 `;
+
+export const UserMenuWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;

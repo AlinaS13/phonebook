@@ -8,7 +8,7 @@ export const FilterWrap = styled.div`
   margin-bottom: 50px;
 `;
 export const Wrap = styled.div`
-  width: 540px;
+  width: 350px;
 
   position: relative;
 `;

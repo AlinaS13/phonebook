@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 export const Header = styled.header`
+  justify-content: space-between;
   text-decoration: none;
   display: flex;
   width: 100%;
@@ -22,3 +23,5 @@ export const StyledLink = styled(NavLink)`
     color: #00ffc0;
   }
 `;
+
+export const WrapUserUI = styled.div``;
