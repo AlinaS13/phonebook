@@ -9,6 +9,9 @@ body {
   background-image: url('./images/img2.akspic.ru-krasivyj_pejzazh-krasavica-art-youtub-voda-2250x4000.jpg');
   background-size: cover;
   color: #fff;
+  font-size: calc(1vh + 1vw);
+
+  /* calc((1vh + 1vw)*.7) */
 }
 
 code {

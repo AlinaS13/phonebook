@@ -53,6 +53,7 @@ const contactSlice = createSlice({
         }
       );
   },
+
   // extraReducers: {
   //   [fetchContacts.pending](state) {
   //     state.isLoading = true;
