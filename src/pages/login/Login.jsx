@@ -26,6 +26,7 @@ export default function Login() {
       })
     ).then(() => navigate('/contacts'));
   };
+  
   return (
     <Wraper>
       <Title>Login</Title>
