@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { registrationOperation } from '../../redux/auth/operations';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Title,
   Wraper,
@@ -28,12 +30,13 @@ export default function Registration() {
       })
     ).then(response => {
       if (response.error) {
+        toast.error('Please enter valid data!');
         navigate('/registration');
       } else {
         navigate('/contacts');
       }
 
-      console.log(response, 'err');
+      // console.log(response, 'err');
     });
   };
   return (
@@ -67,6 +70,7 @@ export default function Registration() {
           required
         />
         <ButtonRegis type="submit">Send</ButtonRegis>
+        <ToastContainer autoClose={3500} theme="colored" />
       </Form>
     </Wraper>
   );

@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginOperation } from '../../redux/auth/operations';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import {
   Title,
   Wraper,
@@ -24,13 +27,19 @@ export default function Login() {
         email,
         password,
       })
-    ).then(() => navigate('/contacts'));
+    ).then(response => {
+      if (response.error) {
+        toast.error('Please enter valid data!');
+      } else {
+        navigate('/contacts');
+      }
+    });
   };
-  
+
   return (
     <Wraper>
       <Title>Login</Title>
-      <Form>
+      <Form onSubmit={e => handleSubmit(e)}>
         <Label htmlFor="email">Email</Label>
         <InputLogin
           type="text"
@@ -47,9 +56,8 @@ export default function Login() {
           onChange={e => setPassword(e.target.value)}
           required
         />
-        <ButtonLogin type="button" onClick={e => handleSubmit(e)}>
-          Login in
-        </ButtonLogin>
+        <ButtonLogin type="submit">Login in</ButtonLogin>
+        <ToastContainer autoClose={3500} theme="colored" />
       </Form>
     </Wraper>
   );

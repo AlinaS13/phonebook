@@ -25,3 +25,8 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const WrapUserUI = styled.div``;
+
+export const MainWrp = styled.div`
+  display: flex;
+  align-items: center;
+`;

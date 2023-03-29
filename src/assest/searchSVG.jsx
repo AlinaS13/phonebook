@@ -2,8 +2,8 @@ import * as React from 'react';
 const SearchSVG = props => (
   <svg
     fill="#fff"
-    width="18"
-    height="18"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 1"

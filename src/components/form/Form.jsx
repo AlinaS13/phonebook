@@ -3,6 +3,8 @@ import { Button, FormWrap, InputForm } from './Form.styled';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -19,7 +21,8 @@ export const Form = () => {
     };
     const saveContact = contacts.items.find(contact => contact.name === name);
     if (saveContact) {
-      return alert('Contact is already added!');
+      return toast.error('Contact is already added!');
+      // alert('Contact is already added!');
     }
     dispatch(addContact(contact));
     reset(event);
@@ -63,6 +66,7 @@ export const Form = () => {
         />
         <Button disabled={isLoading}>Add contact</Button>
       </form>
+      <ToastContainer autoClose={3500} theme="colored" />
     </FormWrap>
   );
 };

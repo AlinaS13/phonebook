@@ -10,7 +10,7 @@ export const LogOutBtn = styled.button`
   background: transparent;
   border: 1px solid;
   border-radius: 10px;
-  margin-right: 10px;
+
   cursor: pointer;
   &:hover,
   &:focus {

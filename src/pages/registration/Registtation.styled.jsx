@@ -34,7 +34,7 @@ export const ButtonRegis = styled.button`
   background: transparent;
   border: 1px solid;
   border-radius: 10px;
-  margin-right: 10px;
+
   margin-bottom: 25px;
   cursor: pointer;
   &:hover,

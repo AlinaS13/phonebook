@@ -1,15 +1,19 @@
+import MainSVG from 'assest/maimSVG';
 import UserMenu from 'components/user-menu/UsrMenu';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectAuthToken } from '../../redux/auth/selector';
-import { Header, StyledLink, WrapUserUI } from './Navidation.steled';
+import { Header, MainWrp, StyledLink, WrapUserUI } from './Navidation.steled';
 
 export default function Navigaion() {
   const authToken = useSelector(selectAuthToken);
 
   return (
     <Header>
-      <StyledLink to="/">Home</StyledLink>
+      <MainWrp>
+        <MainSVG></MainSVG>
+        <StyledLink to="/">PhoneBook</StyledLink>
+      </MainWrp>
       {authToken ? (
         <>
           <StyledLink to="/contacts">Contacts</StyledLink>
