@@ -1,8 +1,11 @@
+import WelcomeSVG from 'assest/welcomeSVG';
 import styled from 'styled-components';
 export default function Home() {
   return (
     <Wrap>
-      <Title>Welcome</Title>
+      <Title>
+        Welcome <WelcomeSVG></WelcomeSVG>
+      </Title>
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
