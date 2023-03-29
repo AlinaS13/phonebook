@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.dbf87d63.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.a38922ee.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.6814ec7c.js",
     "static/media/img2.akspic.ru-krasivyj_pejzazh-krasavica-art-youtub-voda-2250x4000.jpg": "/goit-react-hw-08-phonebook/static/media/img2.akspic.ru-krasivyj_pejzazh-krasavica-art-youtub-voda-2250x4000.ef3ac37836c2b88a52da.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.dbf87d63.css.map": "/goit-react-hw-08-phonebook/static/css/main.dbf87d63.css.map",
-    "main.a38922ee.js.map": "/goit-react-hw-08-phonebook/static/js/main.a38922ee.js.map"
+    "main.6814ec7c.js.map": "/goit-react-hw-08-phonebook/static/js/main.6814ec7c.js.map"
   },
   "entrypoints": [
     "static/css/main.dbf87d63.css",
-    "static/js/main.a38922ee.js"
+    "static/js/main.6814ec7c.js"
   ]
 }
